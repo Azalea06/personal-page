@@ -1,0 +1,49 @@
+body {
+    font-family: Verdana;
+}
+
+#header {
+background-color: dimgray;
+height: 3rem;
+border-bottom: 3rem solid lightcoral;
+}
+
+h1 {
+font-size: 1.5rem;
+color: white;
+}
+
+#title {
+    height: 32rem;
+    background-color: lightgray;
+    text-align: center; 
+}
+
+* {
+    margin: 0;
+}
+
+#about {
+    display: flex;
+}
+
+#about img {
+    height: 21rem;
+}
+
+h3 {
+    color: lightcoral;
+    width: 14rem;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+#fav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
