@@ -11,19 +11,18 @@ body {
 
 
 .container {
+    max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
-    max-width: 1400px;
 }
 
 .container > * {
-    flex-basis: 200px;
-    flex-shrink: 1;
     background-color: lightblue;
     font-size: 10rem;
     color: blue;
     border: 2px dashed blue;
+    flex-basis: 200px;
+    flex-shrink: 1;
 }
 
 
