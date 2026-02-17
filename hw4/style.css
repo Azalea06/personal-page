@@ -48,6 +48,6 @@ body {
 }
 
 .box6 {
-  flex-basis: 100%;
+  flex-basis: 100px;
   flex-grow: 0;
 }
