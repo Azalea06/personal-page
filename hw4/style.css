@@ -14,7 +14,7 @@ body {
     max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
-    gap: 17px;
+    gap: 10px;
 }
 
 .container > * {
@@ -28,23 +28,23 @@ body {
 
 
 .box1 {
-    flex-basis: 170px;
+    flex-basis: 190px;
 }
 
 .box2 {
-    flex-basis: 598px;
+    flex-basis: 588px;
 }
 
 .box3 {
-    flex-basis: 598px;
+    flex-basis: 588px;
 }
 
 .box4 {
-    flex-basis: 1111px;
+    flex-basis: 1110px;
 }
 
 .box5 {
-    flex-basis: 190px;
+    flex-basis: 220px;
 }
 
 .box6 {
