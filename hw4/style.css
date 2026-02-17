@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://cdn.imgchest.com/files/e4gdcpnbw4r.png"); 
+    opacity: .5;
+    background-repeat: no-repeat;
+}
+
+
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: start;
+    max-width: 1400px;
+}
+
+.container > * {
+    flex-basis: 200px;
+    background-color: lightblue;
+    font-size: 10rem;
+    color: blue;
+    border: 2px dashed blue;
+    flex-grow: 1;
+}
