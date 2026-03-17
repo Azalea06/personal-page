@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUCA Women's Hub</title>
+
+    <!-- External Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Tailwind CSS (for layout utilities) & Custom Stylesheet -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6D28D9",
+                        "primary-light": "#8B5CF6",
+                        "primary-dark": "#4C1D95",
+                        "auca-purple": "#2E1065",
+                        "auca-accent": "#C084FC",
+                        "background-light": "#F5F3FF",
+                        "background-dark": "#1E1B4B",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background-light font-display text-slate-900">
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <span class="material-symbols-outlined text-primary text-3xl">hub</span>
+                    <span class="text-xl font-bold tracking-tight text-auca-purple uppercase">AUCA Women's Hub</span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#events" class="text-sm font-medium hover:text-primary transition-colors">Events</a>
+                    <a href="#mentorship"
+                        class="text-sm font-medium hover:text-primary transition-colors">Mentorship</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-primary transition-colors">Projects</a>
+                    <a href="#auth"
+                        class="bg-primary text-white border border-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-white hover:text-primary transition-all">Login
+                        / Register</a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="menu-toggle" class="md:hidden p-2 text-slate-600 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div id="mobile-menu"
+        class="mobile-menu-overlay hidden fixed inset-0 z-[60] text-white flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="menu-close" class="absolute top-6 right-6 text-white hover:text-auca-accent transition-colors">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a href="#events" class="mobile-link hover:text-auca-accent transition-colors">Events</a>
+        <a href="#mentorship" class="mobile-link hover:text-auca-accent transition-colors">Mentorship</a>
+        <a href="#projects" class="mobile-link hover:text-auca-accent transition-colors">Projects</a>
+        <a href="#anonymous" class="mobile-link hover:text-auca-accent transition-colors">Speak Freely</a>
+        <a href="#auth"
+            class="mobile-link bg-white text-auca-purple px-8 py-3 rounded-full hover:bg-slate-200 transition-colors">Login</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="z-10">
+                        <h1 class="text-5xl lg:text-7xl font-black leading-tight tracking-tighter text-slate-900">
+                            Empowering the <br /><span class="text-primary">Women of AUCA</span>
+                        </h1>
+                        <p class="mt-6 text-lg text-slate-600 max-w-xl">
+                            A digital sanctuary for community, professional mentorship, and collective growth. Join a
+                            network of scholars, leaders, and innovators shaping the future of Central Asia.
+                        </p>
+                        <div class="mt-10 flex flex-wrap gap-4">
+                            <button onclick="document.getElementById('auth').scrollIntoView()"
+                                class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                                Join the Community
+                            </button>
+                            <button onclick="document.getElementById('mentorship').scrollIntoView()"
+                                class="bg-slate-200 text-auca-purple px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-300 transition-colors">
+                                Explore Mentors
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative mt-8 lg:mt-0">
+                        <div
+                            class="aspect-square rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500 border-4 border-white">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxOq3nxEUH5go8n10S5fM5R2b5HnHB3mesH_9Nd8yoplMdIonEbtCglIaxwqaOhtS5I6RykuAbD8md4sYddECiGnq3eXcKyMJlpyp7MdsTmVVbtncBF1sPCz4SpcoiTBbIFElF5-SjYKcm6Bjxu6Izs8ggU0QEbjfV4xRQBCPpDa71Cm-AfBwIRdo1pMfQe8ceQSsM6F9hSv3Pxl4vzSXtKWSEUYm6cwtKr8QA-c_ZLQo1YBmGRSLKIZNxaLPQ1hw4pZbDnzUbBw"
+                                alt="Diverse group of female university students" class="w-full h-full object-cover" />
+                        </div>
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-auca-accent p-6 rounded-2xl shadow-xl hidden md:block border-2 border-white">
+                            <p class="text-auca-purple font-black text-3xl">500+</p>
+                            <p class="text-auca-purple/80 text-xs font-bold uppercase tracking-widest mt-1">Active
+                                Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speak Freely Section (Anonymous Questions) -->
+        <section id="anonymous" class="py-20 bg-primary/5 border-y border-primary/10">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">Speak Freely</h2>
+                    <p class="mt-4 text-slate-600">
+                        Your voice matters. Submit your questions, concerns, or ideas completely anonymously.
+                        <span class="font-semibold text-primary">We do not track IP addresses or personal data.</span>
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+                    <form id="anonymous-form" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Category</label>
+                            <select
+                                class="w-full rounded-lg border-slate-300 focus:ring-primary focus:border-primary text-sm p-3 bg-slate-50">
+                                <option>Academic Support</option>
+                                <option>Campus Life</option>
+                                <option>Career Advice</option>
+                                <option>Personal Wellbeing</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">Your Message</label>
+                            <textarea id="anon-message"
+                                class="w-full rounded-lg border-slate-300 focus:ring-primary focus:border-primary text-sm p-3 bg-slate-50 resize-y"
+                                placeholder="Type your anonymous message here..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-primary text-white py-4 rounded-lg font-bold hover:bg-primary-dark transition-all flex items-center justify-center gap-2 shadow-md">
+                            <span class="material-symbols-outlined text-xl">send</span>
+                            Submit Anonymously
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-4xl font-bold text-slate-900">Upcoming Events</h2>
+                        <p class="text-slate-600 mt-2">Discover opportunities tailored for you.</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Event 1 -->
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl hover:border-primary transition-all cursor-pointer">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdHWxS5uEwT2AN_WlZmGLB_OjjIAQE36qc5tLjzt7ELc6w2iRwPkx7IgVNsP3p6j32tRo66sFT0h3RUUKLbS7t1Q1LE5Io3mJDpyhpTLnIP0txieW1OjQO5VV5VHbuNhkYliRnwa7eWAyafYi0xhcvr_AI2zWpg0UmSUy3iKYxXKmFClrWl_NFbGSPVOCP33eMYN48HN1QSRSMEqIw0tqozNqizMjUd-ntKkpgYcjD-zmDhxIwINbiyFGIeP6i4Q0fuuuQRmQFRg"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Academic Event">
+                        </div>
+                        <div class="p-6">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">Academic</span>
+                            <h3
+                                class="text-xl font-bold mt-4 text-slate-800 group-hover:text-primary transition-colors">
+                                Research Grant Workshop</h3>
+                            <p class="text-sm text-slate-500 mt-2 font-medium flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">calendar_today</span> Oct 24 • AUCA
+                                Conference Hall</p>
+                            <p class="text-slate-600 mt-4 line-clamp-2 text-sm leading-relaxed">Learn how to apply for
+                                international research grants specifically for female scholars in social sciences.</p>
+                            <button onclick="alert('Registration open soon!')"
+                                class="mt-6 font-bold text-primary flex items-center gap-1 text-sm bg-primary/5 px-4 py-2 rounded-lg group-hover:bg-primary group-hover:text-white transition-all">Register
+                                Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl hover:border-primary-light transition-all cursor-pointer">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdaBrgsGm7epoasppBhv7NEHxZlL17UVvg9R822wg6BKe6ygS8W-dUJ0QfhDkIgI47FHCd9aNg05AJDQSYyCDPzL0jG4C84U8d0LmS_-_nNRf54ZbY-3kXNaOl8INL9PM_crYUcApCVGmh4QxE2SxEH1EEFHBrb95tSqh5N4PEbZL7nO7Q-STaNNGfEUtGBGrT9dibLy2D9A_mpup0dsy5HmhGrtXPaTF-6jQ-GCVEYY7r0ZS27mX_v83gvUJCmckH_P8oAZYW8w"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="STEM Event">
+                        </div>
+                        <div class="p-6">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-primary-light bg-primary-light/10 px-3 py-1 rounded-full">STEM</span>
+                            <h3
+                                class="text-xl font-bold mt-4 text-slate-800 group-hover:text-primary-light transition-colors">
+                                Women in Tech Meetup</h3>
+                            <p class="text-sm text-slate-500 mt-2 font-medium flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">calendar_today</span> Oct 28 • Makerspace
+                                Lab</p>
+                            <p class="text-slate-600 mt-4 line-clamp-2 text-sm leading-relaxed">Monthly networking event
+                                for Software Engineering and Applied Math majors. Panel discussion on AI ethics.</p>
+                            <button onclick="alert('Registration open soon!')"
+                                class="mt-6 font-bold text-primary-light flex items-center gap-1 text-sm bg-primary-light/5 px-4 py-2 rounded-lg group-hover:bg-primary-light group-hover:text-white transition-all">Register
+                                Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div
+                        class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl hover:border-auca-accent transition-all cursor-pointer">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnW3s4h3PdP57A4pRDc_NgErJfjo_ikbwYxGrAWJH54Btm-5KPZk78688WON1PEQuSd1hPh2Df2gHCn7kFn3ZPyk80UBSWA9sTf-xE7LHHquiREZ40kDY7EgeYpH7GBryD9BCNsIOXsbwbX0Qgd_4aCI_sS289FHMOmWclMD8b1T7VsYbNEJxWm2oJp3Yrt17dbF30Ag78r9B0N8oPHsYrUNo52K_sIYXHSbaKL4IlbwTAF37u8qbNH1rTJvkPTCt9yMWGI0RKVQ"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                alt="Civic Event">
+                        </div>
+                        <div class="p-6">
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest text-auca-purple bg-auca-accent/20 px-3 py-1 rounded-full">Civic
+                                Engagement</span>
+                            <h3
+                                class="text-xl font-bold mt-4 text-slate-800 group-hover:text-auca-purple transition-colors">
+                                Community Outreach Day</h3>
+                            <p class="text-sm text-slate-500 mt-2 font-medium flex items-center gap-1"><span
+                                    class="material-symbols-outlined text-sm">calendar_today</span> Nov 05 • Local
+                                Partner Sites</p>
+                            <p class="text-slate-600 mt-4 line-clamp-2 text-sm leading-relaxed">Join us for a day of
+                                volunteering at the local girls' leadership camp. Transport and lunch provided.</p>
+                            <button onclick="alert('Registration open soon!')"
+                                class="mt-6 font-bold text-auca-purple flex items-center gap-1 text-sm bg-auca-accent/10 px-4 py-2 rounded-lg group-hover:bg-auca-purple group-hover:text-white transition-all">Register
+                                Now <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Mentorship Gallery -->
+        <section id="mentorship" class="py-24 bg-auca-purple text-white border-y border-auca-purple shadow-inner">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4 text-white">Find Your Mentor</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto">Connect with experienced professionals, seniors, and
+                        alumni across various academic departments to guide your journey.</p>
+
+                    <div class="mt-10 flex flex-wrap justify-center gap-3">
+                        <button onclick="alert('Filter applied: All Departments')"
+                            class="px-6 py-2 rounded-full bg-primary text-white text-sm font-bold shadow-md hover:bg-primary-light transition-colors">All
+                            Departments</button>
+                        <button onclick="alert('Filter applied: Business')"
+                            class="px-6 py-2 rounded-full border border-white/20 hover:bg-white/10 text-sm font-bold transition-colors">Business</button>
+                        <button onclick="alert('Filter applied: STEM')"
+                            class="px-6 py-2 rounded-full border border-white/20 hover:bg-white/10 text-sm font-bold transition-colors">STEM</button>
+                        <button onclick="alert('Filter applied: Psychology')"
+                            class="px-6 py-2 rounded-full border border-white/20 hover:bg-white/10 text-sm font-bold transition-colors">Psychology</button>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Mentor 1 -->
+                    <div
+                        class="mentor-card bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center flex flex-col items-center">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuANDjF2TY-H8OPKN23TohyaMTJEmeVMGqOHJs25SKewa_7dmxRYe8vdEatDY_8wmzG3Q7Q90XV3l7-zlQuAlT0HZmTdepIZWxyab4EZBj4ToYKCVjpsl0AQDgW-dSxS8NygcoJkzvqzcX2qj29pXxR7QAP3wiAXT33gK43b4eHrfN-KmdSbFXjnbr4Bgdkg8OxLqB2GOImBLtK5lHMIrLWmY31YCkzTGTnSX69X5tBlRDgX3v6dgJcTFSoDI9EUGLq-7nkHI1nw3Q"
+                            class="w-24 h-24 rounded-full object-cover ring-4 ring-white/10 mb-4" alt="Mentor">
+                        <h4 class="font-bold text-lg text-white">Dr. Elena Sokolova</h4>
+                        <p class="text-auca-accent text-sm font-semibold mb-6">Business Administration</p>
+                        <button onclick="alert('Request sent! Mentor will contact you via email.')"
+                            class="mt-auto w-full py-3 bg-white text-auca-purple rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all shadow-lg">Request
+                            Mentorship</button>
+                    </div>
+
+                    <!-- Mentor 2 -->
+                    <div
+                        class="mentor-card bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center flex flex-col items-center">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBosXq5PlE0J1ppiGXalZJe1h-Jr18HDoSZDpalPE4oDGpj7Ify1SVJCkUXldpWEGmBYAeKnIBodQ7C0cocotihNkHplHFtOCmkcw_cBGRtcKtZmOmcVGoAhzBcNlkbju9WdyJB2tz4CbiDiNxPGS7rIsVcZqAxhhqgzfu0gSaqSoqNCxxWJtCnr29pYbZat3kh0DRsjlmDKxW1iuyYZtCkFSjxoNlFFfIFWK0KLQYBQM4q1_T6clyzFQ8_ZsrvwuXe2FDv1q1y3g"
+                            class="w-24 h-24 rounded-full object-cover ring-4 ring-white/10 mb-4" alt="Mentor">
+                        <h4 class="font-bold text-lg text-white">Amina Japarova</h4>
+                        <p class="text-auca-accent text-sm font-semibold mb-6">Software Engineering</p>
+                        <button onclick="alert('Request sent! Mentor will contact you via email.')"
+                            class="mt-auto w-full py-3 bg-white text-auca-purple rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all shadow-lg">Request
+                            Mentorship</button>
+                    </div>
+
+                    <!-- Mentor 3 -->
+                    <div
+                        class="mentor-card bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center flex flex-col items-center">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQT5Xp9LIub_M17NbuV239RqdFtdAPc9T9TWsf5hAns2g97txsx_mSGcmeHYbovfvGAAd5x628PCuFfyd76yzDRn-b4JB0muUEWXFDNzeK3P-w1HUQ_jhvpAQd7m2OWGtK-eWwAKc9pQ9R_PTluOMErDGeU6Be25fzy6PsazYZB7V2uMlGkOplDA8RDgu8VfqCFbsySB5S2tz832ce9qBAioKTsE2z_wFpDkFse6f0tcxoPA9bDpYz7thnFlmXl9DjO9CmWb9pww"
+                            class="w-24 h-24 rounded-full object-cover ring-4 ring-white/10 mb-4" alt="Mentor">
+                        <h4 class="font-bold text-lg text-white">Malika Nurmamatova</h4>
+                        <p class="text-auca-accent text-sm font-semibold mb-6">International Law</p>
+                        <button onclick="alert('Request sent! Mentor will contact you via email.')"
+                            class="mt-auto w-full py-3 bg-white text-auca-purple rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all shadow-lg">Request
+                            Mentorship</button>
+                    </div>
+
+                    <!-- Mentor 4 -->
+                    <div
+                        class="mentor-card bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 text-center flex flex-col items-center">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4wkZOj6TXU8RN4Y_cwH8G_gPeT0xxFd2WB8ZdjdoOcHrqooIogEOF0SmjX1EpXnYFvGKKichvAqho4CdSVKKR1KH3PnYMCUqiVaaqlMkPsRM-aw_QQoM3m-8pAye0fA2q8lpwvQBYJwwWJuyltA9bCthrJSZxNYu6oc_CxGWTXQOXhtYPOoMKV3kqb2XejFij_tyVKLUrA5LJ_pAi7FvtmIOzFSUWCkRilvzjMN8_XswXQxlv8-Hvke9P1cKlr_zfhdxXW4JOCA"
+                            class="w-24 h-24 rounded-full object-cover ring-4 ring-white/10 mb-4" alt="Mentor">
+                        <h4 class="font-bold text-lg text-white">Aigul Bekova</h4>
+                        <p class="text-auca-accent text-sm font-semibold mb-6">Anthropology</p>
+                        <button onclick="alert('Request sent! Mentor will contact you via email.')"
+                            class="mt-auto w-full py-3 bg-white text-auca-purple rounded-lg text-sm font-bold hover:bg-primary hover:text-white transition-all shadow-lg">Request
+                            Mentorship</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="flex flex-col gap-6">
+                        <div class="w-20 h-2 bg-primary rounded-full"></div>
+                        <h2 class="text-4xl font-bold text-slate-900">The Village Girl Project</h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            Bridging the digital divide for rural talent. This initiative provides AUCA students from
+                            regional backgrounds with equipment, training, and a supportive network to excel in academia
+                            and beyond.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-6">
+                            <div class="bg-primary/5 p-6 rounded-xl border border-primary/10">
+                                <h5 class="text-4xl font-black text-primary mb-2">45+</h5>
+                                <p class="text-sm font-bold text-slate-700 uppercase tracking-wide">Villages Supported
+                                </p>
+                            </div>
+                            <div class="bg-primary/5 p-6 rounded-xl border border-primary/10">
+                                <h5 class="text-4xl font-black text-primary mb-2">120+</h5>
+                                <p class="text-sm font-bold text-slate-700 uppercase tracking-wide">Full Scholarships
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-background-light p-10 rounded-[2.5rem] shadow-xl border border-primary/10 relative">
+                        <div class="absolute -top-6 -right-6 w-24 h-24 bg-auca-accent/20 rounded-full blur-2xl"></div>
+                        <h3 class="text-3xl font-bold mb-6 text-auca-purple relative z-10">"Fatima" Club History</h3>
+                        <p class="text-slate-600 leading-relaxed relative z-10 mb-8">Founded in 2012, the Fatima Afghan
+                            Girls Club was established to provide a safe haven, cultural exchange, and robust academic
+                            support for Afghan scholars at AUCA.</p>
+
+                        <div class="flex items-center justify-between pt-6 border-t border-slate-200 relative z-10">
+                            <span class="text-sm font-bold uppercase tracking-widest text-slate-500">Active
+                                Membership</span>
+                            <div class="flex items-center gap-4">
+                                <div class="flex -space-x-3">
+                                    <div class="w-10 h-10 rounded-full border-2 border-white overflow-hidden shadow-sm">
+                                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvmBOQaCmDWxxcOHGFIlCO8Jt4P-e2QXf28FQ1TGpSOq6sa2VJkkVFkncZEBW3l-mhZk07ACKmOtxMxi7KdhDGKcJ-9SAqlERYtGR_hKSa3AwjYHkcnrXftGx-myjbXdF7fAkCNPQVSWD4JHodSWe_qB-pMeNLv5l8N9DI3xHIf8nCu92BR930fKVjdpjbuZI7oXNJvbmFCNRB3p8Seihh8b0DBgFx4pwTv8KZWsvfoiJcOAa3jc_x3PEwr2G2i56IWMyAKgzRqQ"
+                                            class="w-full h-full object-cover" />
+                                    </div>
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-slate-300 border-2 border-white overflow-hidden shadow-sm">
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white border text-primary font-bold px-3 py-1 rounded-full text-xs shadow-sm">
+                                    +32 Others</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Integrations Placeholder -->
+        <section id="auth" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-2xl font-bold mb-8 text-center text-slate-800">Community & Integrations</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Auth Placeholder -->
+                    <div onclick="alert('Authentication coming soon!')"
+                        class="placeholder-box flex-col group bg-white hover:bg-primary/5 transition-colors cursor-pointer border-slate-300">
+                        <span
+                            class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">lock_person</span>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-primary transition-colors">
+                            Authentication Portal</h3>
+                        <p class="text-slate-500 text-sm max-w-xs mt-3">Link to Single Sign-On (SSO) or Registration
+                            handlers for secure user sessions.</p>
+                    </div>
+
+                    <!-- Social Feeds -->
+                    <div onclick="alert('Social feeds coming soon!')"
+                        class="placeholder-box flex-col group bg-white hover:bg-primary/5 transition-colors cursor-pointer border-slate-300">
+                        <div
+                            class="flex items-center justify-center gap-4 mb-4 text-slate-400 group-hover:text-primary transition-colors">
+                            <span
+                                class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">photo_camera</span>
+                            <span
+                                class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">send</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-primary transition-colors">Live
+                            Social Feeds</h3>
+                        <p class="text-slate-500 text-sm max-w-xs mt-3">Instagram grid components and live Telegram
+                            announcement integrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark text-white border-t-4 border-primary pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-auca-accent text-3xl">hub</span>
+                        <span class="text-xl font-bold tracking-tight uppercase">AUCA Women's Hub</span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm text-sm leading-relaxed">
+                        Dedicated to fostering an inclusive, empowering, and strictly supportive environment for all
+                        women within the American University of Central Asia.
+                    </p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Quick Links</h5>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#events"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Events</a></li>
+                        <li><a href="#mentorship"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Mentors</a></li>
+                        <li><a href="#projects"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Projects</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold text-white mb-6 uppercase tracking-wider text-sm">Support</h5>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="#" onclick="alert('Redirecting to Counseling...'); return false;"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Counseling</a></li>
+                        <li><a href="#" onclick="alert('Redirecting to Career Advising...'); return false;"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Career Advising</a>
+                        </li>
+                        <li><a href="#auth"
+                                class="hover:text-auca-accent transition-colors flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-xs">chevron_right</span> Join the Hub</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">© 2026 AUCA Women's Hub. All
+                    Rights Reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" onclick="alert('Opening stats...'); return false;"
+                        class="text-slate-500 hover:text-white transition-colors"><span
+                            class="material-symbols-outlined">social_leaderboard</span></a>
+                    <a href="#" onclick="alert('Opening share dialog...'); return false;"
+                        class="text-slate-500 hover:text-white transition-colors"><span
+                            class="material-symbols-outlined">share</span></a>
+                    <a href="#" onclick="alert('Opening mailing client...'); return false;"
+                        class="text-slate-500 hover:text-white transition-colors"><span
+                            class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+        // Custom Modal Override for Alerts
+        window.alert = function (msg) {
+            let modal = document.getElementById('custom-modal');
+            if (!modal) {
+                // Create modal dynamically
+                modal = document.createElement('div');
+                modal.id = 'custom-modal';
+                modal.className = 'fixed inset-0 z-[100] hidden items-center justify-center bg-auca-purple/60 backdrop-blur-sm cursor-pointer';
+                modal.onclick = function () {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                };
+
+                const inner = document.createElement('div');
+                inner.className = 'bg-white p-8 rounded-2xl shadow-2xl max-w-sm text-center transform transition-all cursor-default';
+                inner.onclick = function (e) { e.stopPropagation(); };
+
+                const icon = document.createElement('span');
+                icon.className = 'material-symbols-outlined text-primary text-5xl mb-4 block';
+                icon.innerText = 'info';
+
+                const message = document.createElement('p');
+                message.id = 'custom-modal-message';
+                message.className = 'text-slate-800 font-bold mb-6 whitespace-pre-line';
+
+                const btn = document.createElement('button');
+                btn.className = 'bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-md';
+                btn.innerText = 'OK';
+                btn.onclick = function () {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                };
+
+                inner.appendChild(icon);
+                inner.appendChild(message);
+                inner.appendChild(btn);
+                modal.appendChild(inner);
+                document.body.appendChild(modal);
+            }
+
+            document.getElementById('custom-modal-message').innerText = msg;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile Menu Toggle Logic
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuClose = document.getElementById('menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            const toggleMenu = () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            };
+
+            menuToggle.addEventListener('click', toggleMenu);
+            menuClose.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Anonymous Form Submission Alert
+            const form = document.getElementById('anonymous-form');
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const msg = document.getElementById('anon-message').value;
+                    if (msg.trim().length > 0) {
+                        alert('Thank you for your anonymous submission.\nYour message has been securely sent. We do not track any personal data.');
+                        form.reset();
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

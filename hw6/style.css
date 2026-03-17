@@ -1,0 +1,90 @@
+/* Base & Variables */
+:root {
+  --primary: #6d28d9;
+  --primary-light: #8b5cf6;
+  --primary-dark: #4c1d95;
+  --auca-purple: #2e1065;
+  --auca-accent: #c084fc;
+  --background-light: #f5f3ff;
+  --background-dark: #1e1b4b;
+}
+
+body {
+  font-family: 'Lexend', system-ui, -apple-system, sans-serif;
+  background-color: var(--background-light);
+  color: #0f172a;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--auca-purple);
+}
+
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+/* Mobile Menu Transition styling */
+.mobile-menu-overlay {
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  background-color: var(--auca-purple);
+}
+.mobile-menu-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  display: flex !important;
+}
+
+/* Placeholders & Components */
+.placeholder-box {
+  border: 2px dashed var(--primary);
+  background-color: rgba(109, 40, 217, 0.05);
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* Animations & Hover states */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Section specific styling */
+.mentor-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
