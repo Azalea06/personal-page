@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(https://cdn.imgchest.com/files/w7pjcwpll7p.png);
+    background-repeat: no-repeat;
+    max-width: 1306px;
+    min-height: 1583px;
+    font-size: 2rem;
+    opacity: .5;
+    color: blue;
+}
+.container > * {
+    border: 2px dashed blue;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: minmax(75px, auto) minmax(441px, auto) minmax(197px, auto) minmax(302px, auto);
+  grid-template-areas:
+    "one five six"
+    "two two two"
+    "three three three"
+    "four four four";
+  grid-template-columns: minmax(100px, 250px) minmax(200px, 705px) minmax(100px, 348px);
+}
+
+@media (max-width: 500px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "one"
+      "five"
+      "six"
+      "two"
+      "three"
+      "four";
+  }
+}
+
+.box1 {
+    grid-area: one;
+}
+.box2 {
+    grid-area: two;
+}
+.box3 {
+    grid-area: three;
+}
+.box4 {
+    grid-area: four;
+}
+.box5 {
+  grid-area: five;
+  display: flex;
+  align-items: center;
+}
+.box6 {
+    grid-area: six;
+}
+
+.box5 ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 6px;
+  background-color: #ffffff50;
+}
+
+.box5 ul li {
+  color: #292929;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.banks { 
+    flex-basis: 50px;
+    padding-left: 56px;
+}
+.credits {
+    flex-basis: 70px;
+    padding-left: 30px;
+}
+.deposits {
+    flex-basis: 60px;
+    padding-left: 29px;
+}
+.cards {
+    flex-basis: 50px;
+    padding-left: 28px;
+}
+.micro {
+    flex-basis: 110px;
+    padding-left: 32px;
+}
+.more {
+    flex-basis: 40px;
+    padding-left: 9px;
+    color: #c1c7ce
+}
