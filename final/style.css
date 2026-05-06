@@ -1,0 +1,628 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://cdn.imgchest.com/files/w7pjcwpll7p.png);
+    background-repeat: no-repeat;
+    max-width: 1306px;
+    min-height: 1583px;
+    font-size: 2rem;
+    opacity: .5;
+    color: blue;
+}
+
+.container > * {
+    border: 2px dashed blue;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: minmax(75px, auto) minmax(441px, auto) minmax(197px, auto) minmax(302px, auto);
+    grid-template-areas:
+        "one five six"
+        "two two two"
+        "three three three"
+        "four four four";
+    grid-template-columns: minmax(100px, 250px) minmax(200px, 705px) minmax(100px, 348px);
+}
+
+.box1 {
+    grid-area: one;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+.box2 {
+    grid-area: two;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 49px;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f6fdff;
+}
+
+.box3 {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+.box4 {
+grid-area: four;
+    grid-area: four;
+    display: grid;
+    grid-template-columns: 22% 20% 19% 21% auto;
+    grid-template-rows: auto auto;
+    padding: 30px;
+    column-gap: 0;
+    row-gap: 10px;
+    align-items: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: #333;
+    background-color: #ffffff;
+}
+
+
+.box5 {
+    grid-area: five;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.box6 {
+    grid-area: six;
+    background-color: #ffffff;
+}
+
+/*BOX 1*/
+.box1 ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 26px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.box1 ul li {
+    color: #292929;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+.bank-logo-1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 48px;
+    margin-top: -1px;
+}
+
+.bank-logo-1 img {
+  width: 100px;
+  height: auto;
+}
+
+/*BOX 2*/
+
+.contentbox2 {
+    height: 439px;
+    width: 698px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    top: 5px;
+}
+.foryou {
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: -2px;
+    letter-spacing: 0.4px;
+}
+
+.goodcredit {
+    font-size: 3.3rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1.05;
+    letter-spacing: 6.1px;
+    margin-top: 20px;
+    white-space: nowrap;
+    margin-left: 28px;
+}
+
+.onlinerequest {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 27px;
+    margin-left: 30px;
+    max-width: 350px;
+    width: 100%;
+    white-space: normal;
+}
+
+.choosecredit {
+    background-color: #3982f0;
+    color: white;
+    border: none;
+    padding: 9px 22px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    width: fit-content;
+    margin-left: 31px;
+    margin-top: 16px;
+    border-radius: 4px;
+}
+
+.box2-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    top: 21px;
+    right: 48px;
+}
+
+.box2-image img {
+    height: auto;
+    max-width: 93%;
+    margin-left: -40px;
+}
+
+.slide-dots {
+    position: absolute;
+    bottom: 35.3px;
+    left: 0;
+    right: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 8px; 
+}
+
+.dot {
+    width: 33px;
+    height: 4px;
+    background-color: #dee5ea;
+    border-radius: 2px;
+}
+
+.dot.active {
+    background-color: #00002f;
+}
+
+/*BOX 3*/
+.box3 {
+    grid-area: three;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 40px;
+    background-color: #ffffff;
+}
+
+.credits3 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px solid #eff1f350;
+    padding: 6px;
+    flex: 1;
+    position: relative;
+    left: -25px;
+    top: 16px;
+    max-width: 351px;
+}
+
+.deposits3 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px solid #eff1f3;
+    padding: 4px;
+    flex: 1;
+    position: relative;
+    top: 16px;
+    left: -16px;
+    max-width: 351px;
+}
+
+.cards3 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 2px solid #eff1f3;
+    padding: 4px;
+    flex: 1;
+    position: relative;
+    top: 16px;
+    right: 6px;
+    max-width: 351px;
+}
+
+.column1{
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-left: 11px;
+    margin-top: 23px;
+    position: relative;
+    top: -13px;
+    left: 2px;
+}
+
+.column2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 36px;
+    margin-top: 28px;
+    position: relative;
+    top: -14px;
+    left: -23px;
+}
+
+.column3 {
+display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 36px;
+    margin-top: 28px;
+    position: relative;
+    top: -14px;
+    left: -23px;
+}
+
+.wallicon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.deposicon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.cardicon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.wallicon-title, .deposicon-title, .cardicon-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    letter-spacing: 1.6px;
+    flex: 1;
+}
+
+
+.wallicon-content p {
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #0e1122;
+    line-height: 1.5;
+    position: relative;
+    top: -9px;
+    left: 11px;
+}
+
+.deposicon-content p {
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0e1122;
+    line-height: 1.5;
+    font-weight: 500;
+    position: relative;
+    bottom: 12px;
+    left: 14px;
+}
+
+.cardicon-content p {
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0e1122;
+    line-height: 1.5;
+    position: relative;
+    left: 12px;
+    bottom: 12px;
+    font-weight: 500;
+}
+
+/*BOX 4*/
+
+.box4 {
+    grid-area: four;
+    display: grid;
+    grid-template-columns: 22% 20% 19% 21% auto;
+    grid-template-rows: auto 1fr;
+    padding: 30px;
+    column-gap: 0;
+    row-gap: 10px;
+    align-items: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.box4 ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 4px;
+}
+
+.box4 ul li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.bank-logo-4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    margin-left: 45px;
+}
+
+.bank-logo-4 img {
+    width: 93px;
+    height: auto;
+}
+
+.box4-info {
+    font-size: 0.7rem;
+    width: 162px;
+    color: #536278;
+    margin-left: 45px;
+    padding-top: 23px;
+    margin-top: -13px;
+    line-height: 18px;
+}
+
+.box4-currencyinfo {
+    font-size: 0.7rem;
+    width: 150px;
+    color: #536278;
+    padding-top: 7px;
+    margin-top: -14px;
+    line-height: 18px;
+    margin-left: 44px;
+}
+
+.box4-col1 {
+    font-size: 1.07rem;
+    color: #19222b;
+    flex-basis: 50px;
+    width: 241px;
+    margin-top: 29px;
+    line-height: 22px;
+    margin-left: -38px;
+    white-space: nowrap;
+    letter-spacing: -0.99px;
+}
+
+.box4-col2 {
+    font-size: 0.95rem;
+    color: #19222b;
+    flex-basis: 50px;
+    margin-left: -1px;
+    margin-top: 29px;
+    line-height: 22px;
+}
+
+.box4-col3 {
+    font-size: 0.95rem;
+    color: #19222b;
+    flex-basis: 50px;
+    margin-left: -49px;
+    line-height: 22px;
+    margin-top: 29px;
+    white-space: nowrap;
+}
+
+.box4-plane {
+    margin-top: 42px;
+    margin-left: 50px;
+}
+
+.box4-plane img {
+    width: 89px;
+    height: auto;
+}
+
+.box4-bottomtext {
+    align-items: start;
+    grid-row: 6;
+    margin: -23px;
+    position: relative;
+    left: 49px;
+    top: 8px;
+    font-size: 0.8rem;
+    color: #19222b;
+}
+
+.box4-bottomtext li {
+    width: 1150px;
+}
+
+.box4-bottomtext li:last-child {
+    text-align: right;
+}
+
+.link {
+    color: #3070ef;
+    text-decoration: underline;
+}
+/*BOX 5*/
+.box5 ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 6px;
+    flex-wrap: wrap;
+}
+
+.box5 ul li {
+    color: #292929;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.banks {
+    flex-basis: 50px;
+    padding-left: 56px;
+}
+.credits {
+    flex-basis: 70px;
+    padding-left: 30px;
+}
+.deposits {
+    flex-basis: 60px;
+    padding-left: 29px;
+}
+.cards {
+    flex-basis: 50px;
+    padding-left: 28px;
+}
+.micro {
+    flex-basis: 110px;
+    padding-left: 32px;
+}
+.more {
+    flex-basis: 40px;
+    padding-left: 9px;
+    color: #c1c7ce;
+}
+
+/*BOX 6*/
+.box6 ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 2px;
+    padding-top: 29px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+}
+
+.box6 ul li {
+    color: #292929;
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.currency {
+    flex-basis: 50px;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+}
+
+.curicon {
+    display: flex;
+    align-items: start;
+    margin-left: 23px;
+    position: relative;
+    bottom: 1px;
+}
+
+.curicon img {
+    width: 24px;
+    height: auto;
+}
+
+.searicon {
+    display: flex;
+    align-items: center;
+    margin-left: 29px;
+    position: relative;
+    bottom: 3px;
+}
+
+.searicon img {
+    width: 21px;
+    height: auto;
+}
+
+
+/*HAMBURGER*/
+.buttonMenu {
+    display: none !important;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1000;
+    color: #292929;
+}
+
+@media (max-width: 500px) {
+    .buttonMenu {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+    }
+
+    .box5 {
+        display: none;
+    }
+
+    .box5.mobileMenu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 50px;
+        right: 0;
+        z-index: 1000;
+        background-color: white;
+        padding: 1rem;
+    }
+
+    .box5.mobileMenu ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "one"
+            "six"
+            "two"
+            "three"
+            "four";
+    }
+}

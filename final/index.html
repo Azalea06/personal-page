@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" class="style" />
+  </head>
+  <body>
+    <button
+      onclick="switchStyle()"
+      style="position: absolute; top: 0; right: 0"
+    >
+      Style
+    </button>
+    <button class="buttonMenu fa fa-bars"></button>
+    <img
+      src="https://cdn.imgchest.com/files/3yrgczd8n4z.png"
+      style="position: absolute; top: 0; left: 0; z-index: -1"
+    />
+    <div class="container">
+      <div class="box1">
+        <ul>
+          <li class="bank-logo-1">
+            <img src="images/bankicon.jpeg" alt="BANKS logo" />
+          </li>
+        </ul>
+      </div>
+
+      <div class="box2">
+        <div class="contentbox2">
+          <p class="foryou">ПОДБЕРЕМ ДЛЯ ВАС</p>
+          <h1 class="goodcredit">Выгодные кредиты</h1>
+          <p class="onlinerequest">
+            Заполните единую онлайн-заявку, и мы покажем банки, в которых у вас
+            есть высокая вероятность получить кредит.
+          </p>
+          <button class="choosecredit">ПОДОБРАТЬ КРЕДИТ</button>
+        </div>
+        <div class="box2-image">
+          <img src="images/box2image.jpeg" alt="smarty pic" />
+        </div>
+        <div class="slide-dots">
+          <span class="dot"></span>
+          <span class="active dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <div class="box3">
+        <div class="credits3">
+          <div class="column1">
+            <img src="images/walleticon.jpeg" alt="wallet" class="wallicon" />
+            <span class="wallicon-title">КРЕДИТЫ</span>
+          </div>
+          <div class="wallicon-content">
+            <p>
+              Оставьте заявку на получение кредита или сравните кредиты банков
+              Кыргызстана
+            </p>
+          </div>
+        </div>
+
+        <div class="deposits3">
+          <div class="column2">
+            <img
+              src="images/depositicon.jpeg"
+              alt="deposits"
+              class="deposicon"
+            />
+            <span class="deposicon-title">ВКЛАДЫ</span>
+          </div>
+          <div class="deposicon-content">
+            <p>
+              Вложите ваши средства по максимально высокой процентной ставке
+            </p>
+          </div>
+        </div>
+
+        <div class="cards3">
+          <div class="column3">
+            <img src="images/paymentsicon.jpeg" alt="cards" class="cardicon" />
+            <span class="cardicon-title">ПЛАТЕЖНЫЕ КАРТЫ</span>
+          </div>
+          <div class="cardicon-content">
+            <p>
+              Подберите оптимальную банковскую карту, которая подойдет именно
+              вам
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box4">
+        <ul class="box4-brand">
+          <li class="bank-logo-4">
+            <img src="images/bankicon.jpeg" alt="BANK logo" />
+          </li>
+          <li class="box4-info">
+            Актуальная информация по банковским продуктам в Кыргызстане.
+          </li>
+          <li class="box4-currencyinfo">Курс валют в Бишкеке.</li>
+        </ul>
+
+        <ul class="box4-col1">
+          <li>О проекте</li>
+          <li>Реклама на сайте</li>
+          <li>Политика конфиденциальности</li>
+          <li>Обратная связь</li>
+        </ul>
+        <ul class="box4-col2">
+          <li>Для банков</li>
+          <li>Для клиентов</li>
+          <li>Сотрудничество</li>
+          <li>Курсы валют</li>
+          <li>Вакансии</li>
+        </ul>
+        <ul class="box4-col3">
+          <li>Финансовые новости</li>
+          <li>Полезные материалы</li>
+          <li>Вопрос-ответ</li>
+          <li>Справочник</li>
+        </ul>
+        <ul class="box4-plane">
+          <img src="images/box4image.jpeg" alt="plane and something above it" />
+        </ul>
+        <ul class="box4-bottomtext">
+          <li>©2022 Banks.kg Все права защищены.</li>
+          <li>
+            Проект создан и поддерживается командой
+            <span class="link">Intelliants</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="box5">
+        <ul>
+          <li class="banks">Банки</li>
+          <li class="credits">Кредиты</li>
+          <li class="deposits">Вклады</li>
+          <li class="cards">Карты</li>
+          <li class="micro">Микрокредиты</li>
+          <li class="more">Ещё</li>
+        </ul>
+      </div>
+
+      <div class="box6">
+        <ul class="box6content">
+          <li class="curicon">
+            <img src="images/currencyicon.jpeg" alt="currency icon" />
+          </li>
+          <li class="currency">Курсы валют</li>
+          <li class="searicon">
+            <img src="images/searchicon.jpeg" alt="search icon" />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const buttonMenu = document.querySelector(".buttonMenu");
+      const boxFive = document.querySelector(".box5");
+
+      buttonMenu.addEventListener("click", () => {
+        console.log("yes, hamburger clicked!");
+        buttonMenu.classList.toggle("mobileMenu");
+        boxFive.classList.toggle("mobileMenu");
+      });
+    </script>
+    <script>
+      function switchStyle() {
+        let style = document.querySelector(".style");
+        if (style.getAttribute("href") == "style.css") {
+          style.setAttribute("href", "style2.css");
+        } else {
+          style.setAttribute("href", "style.css");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,397 @@
+/* style2.css - Professional Polish Redesign */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bank-blue: #1E3A8A;
+  --bank-accent: #3B82F6;
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --bg-light: #F8FAFC;
+  --white: #FFFFFF;
+  --border-light: #E2E8F0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Image handling for missing assets */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  background: #E2E8F0;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: var(--white);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Logo Section */
+.box1 {
+  order: 1;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+}
+
+.box1 ul {
+  list-style: none;
+}
+
+.bank-logo-1 img {
+  height: 35px;
+  width: auto;
+}
+
+/* Currency / Search Toolbar */
+.box6 {
+  order: 2;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+.box6 ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.box6 li {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bank-blue);
+}
+
+.curicon img, .searicon img {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  filter: saturate(0.5);
+}
+
+/* Navigation Bar */
+.box5 {
+  order: 3;
+  background: var(--bank-blue);
+  padding: 0 30px;
+}
+
+.box5 ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+}
+
+.box5 li {
+  padding: 12px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.box5 li:hover {
+  color: var(--white);
+}
+
+/* Hero Section */
+.box2 {
+  order: 4;
+  display: flex;
+  align-items: center;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  gap: 30px;
+  position: relative;
+}
+
+.contentbox2 {
+  flex: 1;
+}
+
+.foryou {
+  color: var(--bank-accent);
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.goodcredit {
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  margin-bottom: 15px;
+  color: var(--bank-blue);
+  font-weight: 800;
+}
+
+.onlinerequest {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  max-width: 400px;
+}
+
+.choosecredit {
+  background: var(--bank-blue);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.choosecredit:hover {
+  background: #172554;
+  transform: translateY(-1px);
+}
+
+.box2-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.box2-image img {
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.slide-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #CBD5E1;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: var(--bank-accent);
+  width: 20px;
+  border-radius: 4px;
+}
+
+/* Services Grid */
+.box3 {
+  order: 5;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 25px 30px;
+}
+
+.box3 > div {
+  background: var(--white);
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.box3 > div:hover {
+  border-color: var(--bank-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.box3 .column1, .box3 .column2, .box3 .column3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.box3 img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.wallicon-title, .deposicon-title, .cardicon-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--bank-blue);
+}
+
+.wallicon-content p, .deposicon-content p, .cardicon-content p {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* Footer Section */
+.box4 {
+  order: 6;
+  background: #0F172A;
+  color: white;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 24px;
+  font-size: 12px;
+}
+
+.box4 ul {
+  list-style: none;
+}
+
+.box4-brand .bank-logo-4 img {
+  height: 25px;
+  filter: brightness(0) invert(1);
+  margin-bottom: 15px;
+}
+
+.box4-info, .box4-currencyinfo {
+  opacity: 0.6;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.box4 li {
+  margin-bottom: 10px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.box4 li:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.box4-plane img {
+  border-radius: 6px;
+  opacity: 0.4;
+  max-height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.box4-bottomtext {
+  grid-column: 1 / -1;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.5;
+  font-size: 11px;
+}
+
+.link {
+  color: var(--bank-accent);
+  font-weight: 600;
+}
+
+/* Utility / Switch Style Button */
+button[onclick="switchStyle()"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--bank-blue);
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0 0 0 8px;
+}
+
+/* Mobile Sidebar / Menu (Hidden by default) */
+.buttonMenu {
+  display: none;
+}
+
+/* Single Column constraints for < 500px */
+@media (max-width: 800px) {
+  .box4 { grid-template-columns: 1fr 1fr; }
+  .box3 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .box1 { padding: 15px; }
+  .box6 { position: static; padding: 0 15px 15px; }
+  .box6 ul { justify-content: center; }
+  
+  .box2 {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  
+  .box2-image img {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+
+  .box3 {
+    grid-template-columns: 1fr;
+    padding: 20px 15px;
+  }
+
+  .box4 {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .box4-bottomtext {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .box5 ul {
+    gap: 15px;
+    padding: 0 15px;
+  }
+  
+  .slide-dots {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Constraint Check: Max 50px for margin/padding/position notice */
+/* .box2 padding is 40px, box4 is 30px. Container max-width is 1024. All good. */
